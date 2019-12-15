@@ -1,0 +1,99 @@
+#content {
+  .list {
+    .home {
+      position: relative;
+
+      .home-list { //ul
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 500px;
+        @extend .clearfix;
+        li {
+        width: 1100px;
+        height: 520px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: center;
+        visibility: hidden;
+
+        span {
+          color: white;
+          font-size: 80px;
+          display: block;
+          margin-top: 200px;
+        }
+
+        &.list-one {
+          background: #dc6c5f;
+          visibility: visible;
+        }
+
+        &.list-two {
+          background: #95dc84;
+        }
+
+        &.list-three {
+          background: #64b9d2;
+        }
+
+        &.list-four {
+          background: #000000;
+        }
+
+        &.active {
+          visibility: visible;
+        }
+
+        &.leftHide {
+          visibility: hidden;
+          transform: translateZ(-200px);
+          animation: leftHide linear 1 1s;
+        }
+
+        &.rightShow {
+          visibility: visible;
+          transform: translateZ(0);
+          animation: rightShow linear 1 1s;
+        }
+
+        &.leftShow {
+          visibility: visible;
+          transform: translateZ(0);
+          animation: leftShow linear 1 1s;
+        }
+
+        &.rightHide {
+          visibility: hidden;
+          transform: translateZ(-200px);
+          animation: rightHide linear 1 1s;
+        }
+      }
+      }
+
+      .home-points {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        font-size: 0;
+        text-align: center;
+
+        li {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: rgba(255, 255, 255, 0.5);
+          margin: 2px;
+          box-shadow: 0 0 4px rgba(25, 25, 25, 0.8);
+          border-radius: 50%;
+          cursor: pointer;
+
+          &.active {
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+}

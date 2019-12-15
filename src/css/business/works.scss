@@ -1,0 +1,99 @@
+@import "../animation/animation";
+#content {
+  .list {
+    position: relative;
+    .works {
+      .works-1 {
+        @extend .commonTitle;
+        margin: 50px 0 100px 50px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .works-2 {
+        .works-photo { //ul
+          @extend .clearfix;
+          margin-left: 50px;
+          position: relative;
+          z-index: 1;
+
+          li {
+            width: 220px;
+            height: 133px;
+            float: left;
+            margin-right: 1px;
+            position: relative;
+            overflow: hidden;
+
+            &.four {
+              width: 332px;
+              height: 133px;
+            }
+
+            img {
+              transition: transform 1s;
+            }
+
+            .cover {
+              display: block;
+              width: 220px;
+              height: 133px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              background-color: rgba(25, 25, 25, 0.8);
+              opacity: 0;
+              &.four{
+                display: block;
+                width: 332px;
+                height: 133px;
+              }
+
+              p {
+                color: white;
+                padding: 15px;
+              }
+
+              i {
+                width: 30px;
+                height: 34px;
+                display: block;
+                padding-top: 10px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                background-image: url("../../static/img/zoomico.png");
+                background-repeat: no-repeat;
+                transition: background-position .5s;
+                &:hover{
+                  background-position:0 -36px;
+                }
+              }
+            }
+
+            &:hover{
+              img{
+                transform: scale(1.2) rotate(36deg);
+              }
+              .cover{
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      .works-3 {
+        width: 167px;
+        height: 191px;
+        position: absolute;
+        left: 900px;
+        top: 170px;
+        background-image: url("../../static/img/robot.png");
+        animation: robotMove 2s linear infinite;
+        z-index: 1;
+      }
+    }
+  }
+}

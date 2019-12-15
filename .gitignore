@@ -1,0 +1,11 @@
+.DS_Store
+.vscode
+.idea
+node_modules
+*.log
+dist
+src/css/index.css
+src/js/index.min.js
+src/css/index.css.map
+src/css/index.min.css
+src/css/index.min.css.map

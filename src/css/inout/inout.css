@@ -1,0 +1,31 @@
+#content .list .course .plane1 {
+  width: 359px;
+  height: 283px;
+  background: url("../../static/img/plane1.png") no-repeat;
+  position: absolute;
+  left: 300px;
+  top: -100px;
+  transition: 1s;
+}
+
+#content .list .course .plane2 {
+  width: 309px;
+  height: 249px;
+  background: url("../../static/img/plane2.png") no-repeat;
+  position: absolute;
+  left: -100px;
+  top: 200px;
+  transition: 1s;
+}
+
+#content .list .course .plane3 {
+  width: 230px;
+  height: 182px;
+  background: url("../../static/img/plane3.png") no-repeat;
+  position: absolute;
+  left: 300px;
+  top: 400px;
+  transition: 1s;
+}
+
+/*# sourceMappingURL=inout.css.map */

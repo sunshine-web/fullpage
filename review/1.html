@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    .myCanvas {
+      background-color: white;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+<canvas class="myCanvas"></canvas>
+<script type="text/javascript">
+  (function () {
+    var canvas = document.querySelector('.myCanvas')
+    canvas.width = 500;
+    canvas.height = 500;
+    var ctx = canvas.getContext('2d')
+    var arr = []
+
+    //提供圆
+    setInterval(function () {
+      var x = Math.round(Math.random() * canvas.width)
+      var y = Math.round(Math.random() * canvas.height)
+      var radius = 10
+      var r = Math.round(Math.random() * 255)
+      var g = Math.round(Math.random() * 255)
+      var b = Math.round(Math.random() * 255)
+      var a = 1
+
+      arr.push({
+        x,
+        y,
+        radius,
+        r,
+        g,
+        b,
+        a
+      })
+
+    }, 100)
+
+    //画圆
+    setInterval(function (item) {
+      console.log(arr);//测试
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      arr.forEach((item, index) => {
+        item.radius += 0.3
+        item.a -= 0.01
+        if (item.a <= 0) {
+          arr.splice(index, 1)
+        }
+      })
+
+      arr.forEach((item) => {
+        ctx.save()
+        ctx.beginPath()
+        ctx.fillStyle = (`rgba(${item.r},${item.g},${item.b},${item.a})`)
+        ctx.arc(item.x, item.y, item.radius, 0, 2 * Math.PI)
+        ctx.fill()
+        ctx.restore()
+      })
+    }, 1000 / 60)
+  })();
+</script>
+</body>
+</html>

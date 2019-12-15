@@ -1,0 +1,170 @@
+#content {
+  .list {
+    li {
+      overflow: hidden;
+      &.course {
+        .course-1 {
+          @extend .commonTitle;
+          margin: 50px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .course-2 {
+          @extend .commonText;
+          width: 400px;
+          margin-left: 50px;
+          position: relative;
+          z-index: 1;
+        }
+
+        .course-3 {
+          width: 480px;
+          position: absolute;
+          right: 50px;
+          top: 70px;
+          z-index: 1;
+
+          .photo-list { //ul
+            @extend .clearfix;
+
+            li {
+              width: 120px;
+              height: 132px;
+              float: left;
+              position: relative;
+              transform-style: preserve-3d;
+              perspective: 500px;
+
+              span {
+                @include center;
+                backface-visibility: hidden;
+                transition: transform 1s;
+                background-repeat: no-repeat;
+
+                &.face {
+                  background-position: 50% 50%;
+                }
+
+                &.backface {
+                  background: #009ee0;
+                  color: white;
+                  padding: 15px;
+                  transform: rotateY(180deg);
+                }
+              }
+
+              &:hover {
+                span {
+                  &.face {
+                    transform: rotateY(180deg);
+                  }
+
+                  &.backface {
+                    transform: rotateY(360deg);
+                  }
+                }
+              }
+
+              &:nth-child(1) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(2) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(3) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(4) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(5) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(6) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(7) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(8) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(9) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(10) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(11) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+
+              &:nth-child(12) {
+                span {
+                  &.face {
+                    background-image: url("../../static/img/apcoa.png");
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
